@@ -38,8 +38,8 @@ int main()
 }
 
 char inputUser();
-int getComputerChoice(string option[], int number);
-void result(int comp, char user, int number);
+int getComputerChoice(string option[]);
+void result(int comp, char user);
 
 void rps()
 {
@@ -139,7 +139,7 @@ void result(int comp, char user)
   }
   cout << endl
        << endl
-       << "********************************"
+       << "*********************************"
        << endl
        << endl
        << "Exiting to MainMenu." << endl;
@@ -163,7 +163,7 @@ void ht()
   {
     if (guess == heta[number])
     {
-      cout << "You Won!" << number;
+      cout << "You Won!";
     }
     else
     {
@@ -178,7 +178,7 @@ void ht()
 
   cout << endl
        << endl
-       << "********************************"
+       << "*********************************"
        << endl
        << endl
        << "Exiting to MainMenu." << endl;
@@ -216,7 +216,7 @@ retry:
        << "YES! That is right. It took you " << tries << " tries";
   cout << endl
        << endl
-       << "********************************"
+       << "*********************************"
        << endl
        << endl
        << "Exiting to MainMenu." << endl;

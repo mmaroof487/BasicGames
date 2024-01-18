@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/mmuaz/Desktop/New folder/program/Rock-Paper-Scissor",
-      "program": "c:/Users/mmuaz/Desktop/New folder/program/Rock-Paper-Scissor/build/Debug/outDebug",
+      "cwd": "c:/Users/mmuaz/Desktop/New folder/program/BasicGames",
+      "program": "c:/Users/mmuaz/Desktop/New folder/program/BasicGames/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
