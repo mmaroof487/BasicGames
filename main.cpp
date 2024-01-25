@@ -2,6 +2,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <stdlib.h>
+#include <cstring>
 
 using namespace std;
 
@@ -12,6 +13,8 @@ void ng();
 int main()
 {
   int choice, number;
+  char exit;
+
   cout << endl
        << "**** Games ****" << endl
        << "1. Rock-Paper-Scissor" << endl
@@ -35,6 +38,11 @@ int main()
   default:
     cout << "Invalid Input!";
   }
+  cout << endl
+       << endl
+       << "Press any key and enter to continue: ";
+  cin >> exit;
+  main();
 }
 
 char inputUser();
@@ -57,27 +65,28 @@ void rps()
 
 char inputUser()
 {
-  char userChoice;
+  char userChoice, cap;
   cout << endl
        << "Enter Your Choice(r/p/s): ";
   cin >> userChoice;
+  cap = toupper(userChoice);
   cout << endl;
   switch (userChoice)
   {
-  case 'r':
+  case 'R':
     cout << "Your choice: Rock.";
     break;
-  case 'p':
+  case 'P':
     cout << "Your choice: Paper.";
     break;
-  case 's':
+  case 'S':
     cout << "Your choice: Scissor.";
     break;
   default:
     cout << "Invalid input";
   };
   cout << endl;
-  return userChoice;
+  return cap;
 }
 
 int getComputerChoice(string option[])
@@ -94,7 +103,7 @@ void result(int comp, char user)
   cout << endl;
   switch (user)
   {
-  case 'r':
+  case 'R':
     if (comp == 0)
     {
       cout << "It was a Draw.";
@@ -108,7 +117,7 @@ void result(int comp, char user)
       cout << "You Won!";
     }
     break;
-  case 'p':
+  case 'P':
     if (comp == 0)
     {
       cout << "You Won!";
@@ -122,7 +131,7 @@ void result(int comp, char user)
       cout << "You Lost...";
     }
     break;
-  case 's':
+  case 'S':
     if (comp == 0)
     {
       cout << "You Lost...";
@@ -137,13 +146,6 @@ void result(int comp, char user)
     }
     break;
   }
-  cout << endl
-       << endl
-       << "*********************************"
-       << endl
-       << endl
-       << "Exiting to MainMenu." << endl;
-  main();
 }
 
 void ht()
@@ -163,11 +165,11 @@ void ht()
   {
     if (guess == heta[number])
     {
-      cout << "You Won!";
+      cout << "You Won!" << endl;
     }
     else
     {
-      cout << "You Lose...";
+      cout << "You Lose..." << endl;
     }
   }
   else
@@ -175,15 +177,8 @@ void ht()
     cout << "Invalid Input." << endl;
     ht();
   }
-
-  cout << endl
-       << endl
-       << "*********************************"
-       << endl
-       << endl
-       << "Exiting to MainMenu." << endl;
-  main();
 }
+
 void ng()
 {
   int guess, num, tries = 0;
@@ -213,12 +208,5 @@ retry:
     goto retry;
   }
   cout << endl
-       << "YES! That is right. It took you " << tries << " tries";
-  cout << endl
-       << endl
-       << "*********************************"
-       << endl
-       << endl
-       << "Exiting to MainMenu." << endl;
-  main();
+       << "YES! That is right. It took you " << tries << " tries" << endl;
 }
